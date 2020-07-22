@@ -5,14 +5,13 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
 
-  <Target Name="SetupForDemo"
-          AfterTargets="Build">
+  <ItemGroup>
+    <Clean Include="$(BinRoot)/$(Configuration)/$(TargetName).*" />
+  </ItemGroup>
 
+  <Target Name="SetupForDemo" AfterTargets="Build">
     <ItemGroup>
-      <AllOutputs Include="$(OutputPath)$(MSBuildProjectName).dll" />
-      <AllOutputs Include="$(OutputPath)$(MSBuildProjectName).pdb" />
-      <AllOutputs Include="$(OutputPath)$(MSBuildProjectName).runtimeconfig.json" />
-      <AllOutputs Include="$(OutputPath)$(MSBuildProjectName).deps.json" />
+      <AllOutputs Include="$(OutputPath)$(TargetName).*" />
     </ItemGroup>
 
     <!-- Copy the project outputs to the demo directory -->

@@ -1,3 +1,15 @@
+---
+languages:
+- csharp
+- cpp
+products:
+- dotnet-core
+page_type: sample
+name: ".NET Core Hosting Sample"
+urlFragment: "net-core-hosting-hostfxr"
+description: "This project demonstrates a way for a native process to host .NET Core using the `nethost` and `hostfxr` libraries"
+---
+
 # .NET Core Hosting Sample
 
 This project demonstrates a way for a native process to host .NET Core using the `nethost` and `hostfxr` libraries. Documentation on the `nethost` and `hostfxr` APIs can be found [here](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md).
@@ -19,16 +31,16 @@ Additional comments are contained in source and project files.
 
 * C++ compiler
   * Windows: `cl.exe`
+    * See [installation instructions](https://docs.microsoft.com/cpp/build/building-on-the-command-line#download-and-install-the-tools).
   * Linux/OSX: `g++`
 
 ## Build and Run
 
 1. In order to build and run, all prerequisites must be installed. The following are also required:
 
-    * The C++ compiler (`cl.exe` or `g++`) must be on the path.
-      * On Windows, a [Developer Command Prompt for Visual Studio](https://docs.microsoft.com/cpp/build/building-on-the-command-line#developer_command_prompt_shortcuts) should be used.
-    * The C++ compiler (`cl.exe` or `g++`) and `dotnet` must be the same bitness (32-bit or 64-bit).
-      * On Windows, the default developer command prompt for VS uses the 32-bit compilers, but `dotnet` is typically 64-bit by default. Make sure to select the "x64 Native Tools Command Prompt for VS 2019" (or 2017).
+    * On Linux/OSX, the C++ compiler (`g++`) must be on the path.
+    * The C++ compiler (`cl.exe` or `g++`) and `dotnet` must be the same bitness (32-bit versus 64-bit).
+      * On Windows, the sample is set up to use the bitness of `dotnet` to find the corresponding `cl.exe`
 
 1. Navigate to the root directory.
 
